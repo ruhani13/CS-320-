@@ -1,0 +1,44 @@
+<html>
+    <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+      function subscribe() {
+        var email = prompt("What is your email?", "????");
+
+        $.post({
+          type: "POST",
+          url: "email",
+          data: email,
+          contentType: "application/text; charset=utf-8",
+          dataType: "json"
+        }).done(function(data) {
+          alert(data);
+        }).fail(function(data) {
+          alert("POST failed");
+        });
+      }
+    </script>
+  </head>
+  <body style="background-color: pink;">
+    <h1>Welcome to Restaurant Business Rankings 2020</h1>
+      <p>This website contains information about top 250 restaurants of 2020<p>
+      <ul>
+          <li><a href = "browse.html"> Here you can Browse data</a></li>
+          <li><a href = "donate.html?from=<AORB>"><font color = "<COLOR>"> Here you can make donations :)</a></li>
+      </ul>
+    <br>
+          <button onclick="subscribe()">Subscribe</button>  
+          <br>
+          <br>
+          <h3>Dashboard_1</h3>
+          <br>
+          <img src="dashboard_1.svg?Segment_Category=Sales"><br><br>
+          <img src="dashboard_1.svg?Segment_Category=Units"><br><br>
+          <h3>Dashboard_2</h3>
+          <br>
+          <img src="dashboard_2.svg"><br><br>
+        
+    
+    <p>Explore and Enjoy the data!</p>
+  </body>
+</html>
